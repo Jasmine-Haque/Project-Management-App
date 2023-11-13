@@ -16,15 +16,16 @@
 <body>
    <div class="container">
       <aside>
-         <div class="top">
+         <div class="top-icon">
             <div class="logo">
-               <img src="../images/logo.png" alt="">
-               <h2>WORK <span class="danger">STREAMLINE</span></h2>
+               <img src="images/logo.png" alt="">
+               <!-- <h2>WORK <span class="danger">STREAMLINE</span></h2> -->
             </div>
             <div class="close" id="close-btn">
                <span class="material-icons-sharp">close</span>
             </div>
          </div>
+
          <div class="sidebar">
             <a href="#" class="active">
                <span class="material-icons-sharp">grid_view</span>
@@ -70,198 +71,208 @@
          </div>
 
       </aside>
+
       <main>
+
          <div class="right">
             <div class="top">
                <button id="menu-btn">
                   <span class="material-icons-sharp">menu</span>
                </button>
                <div class="profile-theme">
-                  <div class="theme-toggler">
-                     <span class="material-icons-sharp">light_mode</span>
-                     <span class="material-icons-sharp">dark_mode</span>
-                  </div>
+
                   <div class="profile">
                      <div class="info">
-                        <p>Hey, <b>Daniel</b></p>
+                        <p>Hey, <b>Saleha Mariyam</b></p>
                         <small class="text-muted">Admin</small>
                      </div>
                      <div class="profile-photo">
-                        <img src="../images/profile-1.jpg" alt="">
+                        <img src="images/profile.jpeg" alt="">
                      </div>
                   </div>
+                  <div class="theme-toggler">
+                     <span class="material-icons-sharp active">light_mode</span>
+                     <span class="material-icons-sharp">dark_mode</span>
+                  </div>
                </div>
-               
-            </div>
 
+            </div>
+            
             <div class="notification-date">
+               <div class="theme-toggler-1">
+                  <span class="material-icons-sharp active">light_mode</span>
+                  <span class="material-icons-sharp">dark_mode</span>
+               </div>
                <h1>Dashboard</h1>
-               <div class="date">
-                  <span class="material-symbols-outlined">
-                     notifications_active
-                  </span>
-                  <span class="material-symbols-outlined">
-                     calendar_month
-                  </span>
+               <div class="date-theme">
+                  <div class="calender">
+                     <div class="left-calender">
+                        <p id="date">04</p>
+                        <p id="day">Saturday</p>
+                     </div>
+                     <div class="right-calender">
+                        <p id="month">November</p>
+                        <p id="year">2023</p>
+                     </div>
+                  </div>
                </div>
 
-            </div>
-
-            <!-- PROJECT DASHBOARD -->
-            <div class="project-container">
-
-               <div class="left-project">
-                  <div class="create-project">
-                     <h1>Projects</h1>
-                     <div class="add-project">
-                        <span class="material-symbols-outlined">add_circle</span>
-                        <h3>Create Project</h3>
-                     </div>
-                  </div>
-
-                  <div class="project-section">
-                     <div class="started-project">
-                        <div class="start">
-                           <h2>Started</h2>
-                           <span class="material-symbols-outlined">add_circle</span>
-                        </div>
-
-                        <div class="box">
-                           <div class="project-name">
-                              <h3>Project 1</h3>
-                           </div>
-                           <div class="project-name">
-                              <h3>Project 2</h3>
-                           </div>
-                           <div class="project-name">
-                              <h3>Project 3</h3>
-                           </div>
-
-                        </div>
-
-                     </div>
-
-                     <div class="Ongoing-project">
-                        <div class="start">
-                           <h2>On Going</h2>
-                           <span class="material-symbols-outlined">add_circle</span>
-                        </div>
-
-                        <div class="box">
-                           <div class="project-name">
-                              <h3>Project 1</h3>
-                           </div>
-                           <div class="project-name">
-                              <h3>Project 2</h3>
-                           </div>
-                           <div class="project-name">
-                              <h3>Project 3</h3>
-                           </div>
-
-                        </div>
-
-                     </div>
-
-                     <div class="completed-project">
-                        <div class="start">
-                           <h2>Completed</h2>
-                           <span class="material-symbols-outlined">add_circle</span>
-                        </div>
-
-                        <div class="box">
-                           <div class="project-name">
-                              <h3>Project 1</h3>
-                           </div>
-                           <div class="project-name">
-                              <h3>Project 2</h3>
-                           </div>
-                           <div class="project-name">
-                              <h3>Project 3</h3>
-                           </div>
-
-                        </div>
-
-                     </div>
-                  </div>
-
-               </div>
-
-               <div class="right-project">
-                  <div class="team">
-                     <h3>Team</h3>
-                     <span class="material-symbols-outlined">
-                        groups_2
-                     </span>
-                  </div>
-
-                  <div class="project-progress">
-                     <div class="middle">
-                        <div class="left-item">
-                           <h2>Total Projects</h2>
-                           <h3>2430</h3>
-                        </div>
-                        <div class="total-progress">
-                           <svg>
-                              <circle cx="40" cy="40" r="37"></circle>
-                           </svg>
-                           <div class="number">
-                              <p>62%</p>
-                           </div>
-                        </div>
-                     </div>
-
-                     <div class="middle">
-                        <div class="left-item">
-                           <h2>Completed</h2>
-                           <h3>985</h3>
-                        </div>
-                        <div class="completed-progress">
-                           <svg>
-                              <circle cx="40" cy="40" r="37"></circle>
-                           </svg>
-                           <div class="number">
-                              <p>51%</p>
-                           </div>
-                        </div>
-                     </div>
-
-                     <div class="middle">
-                        <div class="left-item">
-                           <h2>In Progress</h2>
-                           <h3>350</h3>
-                        </div>
-                        <div class="in-progress">
-                           <svg>
-                              <circle cx="40" cy="40" r="37"></circle>
-                           </svg>
-                           <div class="number">
-                              <p>25%</p>
-                           </div>
-                        </div>
-                     </div>
-
-                     <div class="middle">
-                        <div class="left-item">
-                           <h2>Waiting</h2>
-                           <h3>180</h3>
-                        </div>
-                        <div class="waiting-progress">
-                           <svg>
-                              <circle cx="40" cy="40" r="37"></circle>
-                           </svg>
-                           <div class="number">
-                              <p>12%</p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-
-               </div>
             </div>
 
          </div>
 
-      </main>
+         <!-- PROJECT DASHBOARD -->
+         <div class="project-container">
+
+            <div class="left-project">
+               <div class="create-project">
+                  <h1>Projects</h1>
+                  <div class="add-project">
+                     <span class="material-symbols-outlined">add_circle</span>
+                     <h1>Create Project</h1>
+                  </div>
+               </div>
+
+               <div class="project-section">
+                  <div class="started-project">
+                     <div class="start">
+                        <h2>Started</h2>
+                        <span class="material-symbols-outlined">add_circle</span>
+                     </div>
+
+                     <div class="box">
+                        <button class="project-name">
+                           <h3>Project 1</h3>
+                        </button>
+                        <button class="project-name">
+                           <h3>Project 2</h3>
+                        </button>
+                        <button class="project-name">
+                           <h3>Project 3</h3>
+                        </button>
+
+                     </div>
+
+                  </div>
+
+                  <div class="Ongoing-project">
+                     <div class="start">
+                        <h2>On Going</h2>
+                        <span class="material-symbols-outlined">add_circle</span>
+                     </div>
+
+                     <div class="box">
+                        <button class="project-name">
+                           <h3>Project 1</h3>
+                        </button>
+                        <button class="project-name">
+                           <h3>Project 2</h3>
+                        </button>
+                        <button class="project-name">
+                           <h3>Project 3</h3>
+                        </button>
+
+                     </div>
+
+                  </div>
+
+                  <div class="completed-project">
+                     <div class="start">
+                        <h2>Completed</h2>
+                        <span class="material-symbols-outlined">add_circle</span>
+                     </div>
+
+                     <div class="box">
+                        <button class="project-name">
+                           <h3>Project 1</h3>
+                        </button>
+                        <button class="project-name">
+                           <h3>Project 2</h3>
+                        </button>
+                        <button class="project-name">
+                           <h3>Project 3</h3>
+                        </button>
+
+                     </div>
+
+                  </div>
+               </div>
+
+            </div>
+
+            <div class="right-project">
+               <div class="team">
+                  <h1>Team</h1>
+                  <span class="material-symbols-outlined">
+                     groups_2
+                  </span>
+               </div>
+
+               <div class="project-progress">
+                  <div class="middle">
+                     <div class="left-item">
+                        <h2>Total Projects</h2>
+                        <h3>2430</h3>
+                     </div>
+
+                     <div class="total-progress-container">
+                        <div class="circular-progress" id="circular-1">
+                           <span class="progress-value" id="progress-1">0%</span>
+                        </div>
+                     </div>
+
+                  </div>
+
+                  <div class="middle">
+                     <div class="left-item">
+                        <h2>Completed</h2>
+                        <h3>985</h3>
+                     </div>
+
+                     <div class="completed-progress-container">
+                        <div class="circular-progress" id="circular-2">
+                           <span class="progress-value" id="progress-2">0%</span>
+                        </div>
+                     </div>
+
+                  </div>
+
+                  <div class="middle">
+                     <div class="left-item">
+                        <h2>In Progress</h2>
+                        <h3>350</h3>
+                     </div>
+
+                     <div class="in-progress-container">
+                        <div class="circular-progress" id="circular-3">
+                           <span class="progress-value" id="progress-3">0%</span>
+                        </div>
+
+                     </div>
+
+                  </div>
+
+                  <div class="middle">
+                     <div class="left-item">
+                        <h2>Waiting</h2>
+                        <h3>180</h3>
+                     </div>
+
+                     <div class="waiting-progress-container">
+                        <div class="circular-progress" id="circular-4">
+                           <span class="progress-value" id="progress-4">0%</span>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+
+   </div>
+
+   </main>
 
    </div>
 
