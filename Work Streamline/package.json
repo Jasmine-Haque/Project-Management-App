@@ -2,7 +2,8 @@
   "name": "work-streamline",
   "version": "1.0.0",
   "description": "A web app to manage projects.",
-  "main": "index.js",
+  "type": "module",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,6 +22,8 @@
   },
   "dependencies": {
     "body-parser": "^1.20.2",
-    "express": "^4.18.2"
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mysql2": "^3.6.5"
   }
 }

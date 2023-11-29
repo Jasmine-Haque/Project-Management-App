@@ -32,7 +32,8 @@
         title="Close Modal"
         >&times;</span
       >
-      <form class="modal-content" action="dashboard.html">
+      <!-- Sign Up Form -->
+      <form class="modal-content" action="/action_page.php">
         <div
           class="container"
           style="
@@ -122,8 +123,9 @@
       </form>
     </div>
 
+    <!-- Login Form -->
     <div id="id01" class="modal1">
-      <form class="modal-content animate" action="dashboard.html" >
+      <form class="modal-content animate" action="/login" >
         <div class="imgcontainer">
           <span
             onclick="document.getElementById('id01').style.display='none'"
@@ -135,23 +137,23 @@
         </div>
 
         <div class="container">
-          <label id="uname" for="uname"><b>Username</b></label>
+          <label for="login_uname"><b>Username</b></label>
           <input
             type="text"
             placeholder="Enter Username"
-            name="uname"
+            name="login_uname"
             required
           />
 
-          <label id="psw" for="psw"><b>Password</b></label>
+          <label for="login_psw"><b>Password</b></label>
           <input
             type="password"
             placeholder="Enter Password"
-            name="psw"
+            name="login_psw"
             required
           />
 
-          <button type="submit" onclick="attemptLogin()">Login</button>
+          <button type="submit" onclick="attemptLogin()" id="login_btn">Login</button>
           <label>
             <input type="checkbox" checked="checked" name="remember" /> Remember
             me
@@ -171,5 +173,6 @@
       </form>
     </div>
     <script src="../js/form.js"></script>
+    <script type="module" src="../js/index.js"></script>
   </body>
 </html>
