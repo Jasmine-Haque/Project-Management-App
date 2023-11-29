@@ -2,11 +2,11 @@
 // Function to attempt login
 function attemptLogin() {
   // Get input values
-  var username = document.getElementById('uname').value;
-  var password = document.getElementById('psw').value;
+  var username = document.getElementById('login_uname').value;
+  var password = document.getElementById('login_psw').value;
 
   // Retrieve stored password for the given username
-  var storedPassword = localStorage.getItem(username);
+  var storedUsername = localStorage.getItem(username);
   var storedPassword = localStorage.getItem(password);
 
   // Check if the stored password matches the entered password
