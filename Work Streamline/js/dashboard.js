@@ -141,3 +141,66 @@ let progress4 = setInterval(() => {
       clearInterval(progress4);
    }
 }, speed);
+
+// For started project 
+
+// Get the button element by its id
+var project_1 = document.getElementById('projectS_1');
+
+// Add a click event listener to the button
+project_1.addEventListener('click', function () {
+   // Display an alert when the button is clicked
+   alert('Button clicked!');
+});
+
+var project_2 = document.getElementById('projectS_2');
+project_2.addEventListener('click', function () {
+   alert('Button clicked!');
+});
+
+var project_3 = document.getElementById('projectS_3');
+project_3.addEventListener('click', function () {
+   alert('Button clicked!');
+});
+
+// For Ongoing project 
+
+// Get the button element by its id
+var project_1 = document.getElementById('projectO_1');
+
+// Add a click event listener to the button
+project_1.addEventListener('click', function () {
+   // Display an alert when the button is clicked
+   alert('Button clicked!');
+});
+
+var project_2 = document.getElementById('projectO_2');
+project_2.addEventListener('click', function () {
+   alert('Button clicked!');
+});
+
+var project_3 = document.getElementById('projectO_3');
+project_3.addEventListener('click', function () {
+   alert('Button clicked!');
+});
+
+// For Completed project 
+
+// Get the button element by its id
+var project_1 = document.getElementById('projectC_1');
+
+// Add a click event listener to the button
+project_1.addEventListener('click', function () {
+   // Display an alert when the button is clicked
+   alert('Button clicked!');
+});
+
+var project_2 = document.getElementById('projectC_2');
+project_2.addEventListener('click', function () {
+   alert('Button clicked!');
+});
+
+var project_3 = document.getElementById('projectC_3');
+project_3.addEventListener('click', function () {
+   alert('Button clicked!');
+});

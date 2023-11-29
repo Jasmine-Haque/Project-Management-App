@@ -1,24 +1,3 @@
-// document.getElementById("id01").addEventListener("submit", function(event) {
-  // Prevent the default form submission
-  // event.preventDefault();
-
-  // Get the entered credentials
-  // var username = document.getElementById("uname").value;
-  // var password = document.getElementById("psw").value;
-
-  // Retrieve stored credentials from localStorage
-  // var storedUsername = localStorage.getItem("uname");
-  // var storedPassword = localStorage.getItem("psw");
-
-  // Replace the following condition with your actual authentication logic
-  // if (username === storedUsername && password === storedPassword) {
-    // Redirect to another page
-  //   window.location.href = "dashboard.html";
-  // } else {
-    // Display an error message
-//     alert("Invalid credentials. Please try again.");
-//   }
-// });
 
 // Function to attempt login
 function attemptLogin() {
