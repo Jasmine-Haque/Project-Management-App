@@ -36,12 +36,23 @@ app.post("/login",async function (request,response){
     let loginUsername = request.body.login_uname;
     let loginPassword = request.body.login_psw;
     
+    /*
     let query = "SELECT * from Person where Name='" + loginUsername + "' and password='" + loginPassword + "';";
     DBManage.readData(query, response, (result) =>
     {
-        console.log(result);
-        response.redirect("/dashboard");
-    }); 
+        if(result.length > 0)
+        {
+            //response.send(loginUsername);
+            response.redirect("/dashboard");
+        }
+        else
+        {
+            response.redirect("/error");
+        }
+        
+    });
+    */
+    response.redirect("/dashboard"); 
 });
 
 
@@ -54,19 +65,20 @@ app.get("/",(request,response)=>{
 
 app.get("/dashboard",async function(request, response){
     response.statusCode = 200;
-    response.render("dashboard",(error,html)=>
-    { 
-        if(error)
-        {
-            console.log(error);
-        }
-        else
-        {
-            response.send(html);
-        }
+    /*
+    response.render("dashboard",
+    {
+        action: "login",
+        userName: request.params.loginUsername
     });
+    */
+   response.render("dashboard");
 });
 
+app.get("/error",async function(request, response){
+    response.statusCode = 404;
+    response.render("error");
+});
 
 server.listen(port, ()=>
 {
