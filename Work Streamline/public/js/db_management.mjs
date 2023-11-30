@@ -42,7 +42,7 @@ export function readData(query,response, onGettingData)
         {
             console.log("Connected successfully");
             console.log("Running query: " + query);
-            connection.query({sql: query}, function(queryError, rows, fields)
+            connection.query({sql: query, rowsAsArray: false}, function(queryError, result, fields)
             {
                 if(queryError)
                 {
@@ -50,7 +50,7 @@ export function readData(query,response, onGettingData)
                 }
                 else
                 {
-                    onGettingData(response.json(rows));
+                    onGettingData(result);
                 }
 
                 connectionPool.releaseConnection(connection);
