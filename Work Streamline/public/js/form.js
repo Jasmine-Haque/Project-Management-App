@@ -1,4 +1,5 @@
 
+const signupBtn = document.getElementById("sign_up_btn");
 // Function to attempt login
 function attemptLogin() {
   // Get input values
@@ -20,21 +21,20 @@ function attemptLogin() {
 }
 
 // Function to attempt signup
-function attemptSignup() {
+function validateSignup() {
   // Get input values
-  var newUsername = document.getElementById('newUsername').value;
-  var newPassword = document.getElementById('newPassword').value;
+  var newUsername = document.getElementById('newUsername').value.trim();
+  var newEmail = document.getElementById('newEmail').value.trim();
+  var newPassword = document.getElementById('newPassword').value.trim();
+  var repeatPassword = document.getElementById('repeatPassword').value.trim();
 
-  // Check if the username already exists in local storage
-  if (localStorage.getItem(newUsername)) {
-    alert('Username already exists. Please choose a different one.');
-  } else {
-    // Store the new user credentials in local storage
-    localStorage.setItem(newUsername, newPassword);
-    alert('Signup successful! Redirecting to the dashboard.');
-    
-    // Redirect to the dashboard page (replace 'dashboard.html' with your actual dashboard page)
-    window.location.href = 'dashboard.html';
+  if(newPassword == repeatPassword)
+  {
+      signupBtn.disabled = false;
+  }
+  else
+  {
+      signupBtn.disabled = true;
   }
 }
 

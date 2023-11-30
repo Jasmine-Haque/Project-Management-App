@@ -33,7 +33,7 @@
         >&times;</span
       >
       <!-- Sign Up Form -->
-      <form class="modal-content" action="/action_page.php">
+      <form class="modal-content" action="/sign_up" method="post">
         <div
           class="container"
           style="
@@ -46,7 +46,22 @@
           <h1>Sign Up</h1>
           <p>Please fill in the form to create an account.</p>
           <hr />
-          <label for="email" id="newUsername"><b>Email</b></label>
+          <label for="sign_up_uname"><b>Username</b></label>
+          <input
+            style="
+              padding: 15px;
+              margin: 25px 0 22px 0;
+              border: none;
+              background: #f1f1f1;
+            "
+            type="text"
+            placeholder="Enter Username"
+            name="sign_up_uname"
+            id="newUsername"
+            onkeyup="validateSignup()"
+            required
+          />
+          <label for="sign_up_email"><b>Email</b></label>
           <input
             style="
               padding: 15px;
@@ -56,10 +71,12 @@
             "
             type="text"
             placeholder="Enter Email"
-            name="psw"
+            name="sign_up_email"
+            id="newEmail"
+            onkeyup="validateSignup()"
             required
           />
-          <label for="psw" id="newPassword"><b>Password</b></label>
+          <label for="sign_up_psw"><b>Password</b></label>
           <input
             style="
               padding: 15px;
@@ -69,7 +86,9 @@
             "
             type="password"
             placeholder="Enter Password"
-            name="psw"
+            name="sign_up_psw"
+            id="newPassword"
+            onkeyup="validateSignup()"
             required
           />
 
@@ -84,6 +103,8 @@
             type="password"
             placeholder="Repeat Password"
             name="psw-repeat"
+            id="repeatPassword"
+            onkeyup="validateSignup()"
             required
           />
 
@@ -105,8 +126,8 @@
             <button
               style="opacity: 0.9"
               type="submit"
-              onclick="attemptSignup()"
               class="signupbtn"
+              id="sign_up_btn"
             >
               Sign Up
             </button>
@@ -175,6 +196,5 @@
       </form>
     </div>
     <script src="../js/form.js"></script>
-    <script type="module" src="../js/index.js"></script>
   </body>
 </html>

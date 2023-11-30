@@ -39,6 +39,21 @@ router.post("/login",async function (request,response){
     }); 
 });
 
+router.post("/sign_up",async function (request,response){
+    let signupUsername = request.body.sign_up_uname;
+    let signupEmail = request.body.sign_up_email;
+    let signUpPassword = request.body.sign_up_psw;
+
+    /*
+    let query = "Insert into Person values('" + signupUsername + "','" + signupEmail + "','" + signUpPassword + "','Empy');";
+    DBManage.writeData(query, response,()=>{
+        //window.alert("User successfully added");
+        console.log("User successfully added");
+        response.redirect("/");
+    });
+    */
+   response.redirect("/"); 
+});
 
 
 router.get("/",(request,response)=>{

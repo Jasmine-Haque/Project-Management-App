@@ -25,6 +25,7 @@ app.use(express.static(path.join(__dirname, "./public")));
 
 app.get("/",intialWindow.router);
 app.post("/login",intialWindow.router);
+app.post("/sign_up",intialWindow.router);
 
 /*
 app.get("/dashboard",async function(request, response){
