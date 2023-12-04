@@ -150,17 +150,23 @@ var project_1 = document.getElementById('projectS_1');
 // Add a click event listener to the button
 project_1.addEventListener('click', function () {
    // Display an alert when the button is clicked
-   alert('Button clicked!');
+   alert(`Description : UI Design
+Assigned to : Ravi Mathur
+Assigned on : 2/11/2023`);
 });
 
 var project_2 = document.getElementById('projectS_2');
 project_2.addEventListener('click', function () {
-   alert('Button clicked!');
+   alert(`Description : Content Writing
+Assigned to : Viraj Shukla
+Assigned on : 1/11/2023`);
 });
 
 var project_3 = document.getElementById('projectS_3');
 project_3.addEventListener('click', function () {
-   alert('Button clicked!');
+   alert(`Description : Langing Page
+Assigned to : Abhinav Jaiswal
+Assigned on : 4/11/2023`);
 });
 
 // For Ongoing project 
@@ -171,17 +177,23 @@ var project_1 = document.getElementById('projectO_1');
 // Add a click event listener to the button
 project_1.addEventListener('click', function () {
    // Display an alert when the button is clicked
-   alert('Button clicked!');
+   alert(`Description : Illustration
+Assigned to : Jahnvi Mehta
+Assigned on : 2/9/2023`);
 });
 
 var project_2 = document.getElementById('projectO_2');
 project_2.addEventListener('click', function () {
-   alert('Button clicked!');
+   alert(`Description : UI Design
+Assigned to : Ranvijay Jaiswal
+Assigned on : 23/4/2023`);
 });
 
 var project_3 = document.getElementById('projectO_3');
 project_3.addEventListener('click', function () {
-   alert('Button clicked!');
+   alert(`Description : Copywriting
+Assigned to : Rohit Singh
+Assigned on : 12/8/2023`);
 });
 
 // For Completed project 
@@ -192,15 +204,21 @@ var project_1 = document.getElementById('projectC_1');
 // Add a click event listener to the button
 project_1.addEventListener('click', function () {
    // Display an alert when the button is clicked
-   alert('Button clicked!');
+   alert(`Description : Designing
+Assigned to : Pratik Ahuja
+Assigned on : 24/2/2023`);
 });
 
 var project_2 = document.getElementById('projectC_2');
 project_2.addEventListener('click', function () {
-   alert('Button clicked!');
+   alert(`Description : Responsive
+Assigned to : Dilip Verma
+Assigned on : 20/4/2023`);
 });
 
 var project_3 = document.getElementById('projectC_3');
 project_3.addEventListener('click', function () {
-   alert('Button clicked!');
+   alert(`Description : Chat Bot
+Assigned to : Sujay 
+Assigned on : 13/6/2023`);
 });
