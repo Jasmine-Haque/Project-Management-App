@@ -16,7 +16,7 @@ function attemptLogin() {
     // Redirect to the dashboard page (replace 'dashboard.html' with your actual dashboard page)
     window.location.href = 'dashboard.html';
   } else {
-    alert('Login failed. Please check your username and password.');
+    alert('Login Successful . Please enter your workspace.');
   }
 }
 
