@@ -308,7 +308,9 @@
                      
                      <div class="left-item">
                         <h2>Total Projects</h2>
-                        <h3><%= (startedProjects.size + onGoingProjects.size + completedProjects.size) %></h3>
+                        <h3><%= (Object.entries(startedProjects).length + 
+                                 Object.entries(onGoingProjects).length +
+                                 Object.entries(completedProjects).length) %></h3>
                      </div>
 
                      <div class="total-progress-container">
@@ -322,7 +324,7 @@
                   <div class="middle">
                      <div class="left-item">
                         <h2>Completed</h2>
-                        <h3>985</h3>
+                        <h3><%= (Object.entries(completedProjects).length) %></h3>
                      </div>
 
                      <div class="completed-progress-container">
@@ -336,7 +338,7 @@
                   <div class="middle">
                      <div class="left-item">
                         <h2>In Progress</h2>
-                        <h3>350</h3>
+                        <h3><%= (Object.entries(onGoingProjects).length) %></h3>
                      </div>
 
                      <div class="in-progress-container">
@@ -351,7 +353,7 @@
                   <div class="middle">
                      <div class="left-item">
                         <h2>Waiting</h2>
-                        <h3>180</h3>
+                        <h3>0</h3>
                      </div>
 
                      <div class="waiting-progress-container">

@@ -5,7 +5,6 @@ import { request } from "http";
 import path from "path";
 import async from "async";
 import * as DBManage from "../public/js/db_management.mjs";
-
 export const router = express.Router();
 
 const LOGIN_CREDIENTIALS = 0;
@@ -101,8 +100,7 @@ router.post("/login",async function (request,response){
             }
             else
             {
-                console.log(results);
-                console.log(results.get(LOGIN_CREDIENTIALS));
+                //console.log(Object.entries(results.get(STARTED_PROJECTS)).length);
                 response.statusCode = 200;
                 response.render("dashboard",
                 {
@@ -112,6 +110,8 @@ router.post("/login",async function (request,response){
                     onGoingProjects: results.get(ON_GOING_PROJECTS),
                     completedProjects: results.get(COMPLETED_PROJECTS)
                 });
+
+                
             }
         });    
     }

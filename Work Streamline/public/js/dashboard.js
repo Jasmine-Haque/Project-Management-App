@@ -74,22 +74,18 @@ year.innerHTML = today.getFullYear();
 
 /* ------------------------------------ Progress Bar Animation ---------------------------------*/
 
+
 // For Total Projects in Stream-Line
+
+
 
 let circularProgress = document.querySelector("#circular-1"),
    progressValue = document.querySelector("#progress-1");
 let progressStartValue = 0,
-   progressEndValue = 72,
+   progressEndValue = 100,
    speed = 45;
+   
 
-let progress = setInterval(() => {
-   progressStartValue++;
-   progressValue.textContent = `${progressStartValue}%`
-   circularProgress.style.background = `conic-gradient(#7d2ae8 ${progressStartValue * 3.6}deg, #ededed 0deg)`
-   if (progressStartValue == progressEndValue) {
-      clearInterval(progress);
-   }
-}, speed);
 
 // For Completed Projects in Stream-Line
 
@@ -99,14 +95,6 @@ let progressStartValue2 = 0,
    progressEndValue2 = 51,
    speed2 = 45;
 
-let progress2 = setInterval(() => {
-   progressStartValue2++;
-   progressValue2.textContent = `${progressStartValue2}%`
-   circularProgress2.style.background = `conic-gradient(#7d2ae8 ${progressStartValue2 * 3.6}deg, #ededed 0deg)`
-   if (progressStartValue2 == progressEndValue2) {
-      clearInterval(progress2);
-   }
-}, speed);
 
 // For In-Progress Projects in Stream-Line
 
@@ -116,14 +104,7 @@ let progressStartValue3 = 0,
    progressEndValue3 = 35,
    speed3 = 45;
 
-let progress3 = setInterval(() => {
-   progressStartValue3++;
-   progressValue3.textContent = `${progressStartValue3}%`
-   circularProgress3.style.background = `conic-gradient(#7d2ae8 ${progressStartValue3 * 3.6}deg, #ededed 0deg)`
-   if (progressStartValue3 == progressEndValue3) {
-      clearInterval(progress3);
-   }
-}, speed);
+   
 
 // For Waiting Projects in Stream-Line
 
@@ -133,14 +114,6 @@ let progressStartValue4 = 0,
    progressEndValue4 = 15,
    speed4 = 45;
 
-let progress4 = setInterval(() => {
-   progressStartValue4++;
-   progressValue4.textContent = `${progressStartValue4}%`
-   circularProgress4.style.background = `conic-gradient(#7d2ae8 ${progressStartValue4 * 3.6}deg, #ededed 0deg)`
-   if (progressStartValue4 == progressEndValue4) {
-      clearInterval(progress4);
-   }
-}, speed);
 
 // For started project 
 
@@ -222,3 +195,33 @@ project_3.addEventListener('click', function () {
 Assigned to : Sujay 
 Assigned on : 13/6/2023`);
 });
+
+
+function showProgress(circularProgress, progressValue, percentage)
+{
+   console.log(percentage);
+   let startValue = 0;
+   let endValue = percentage * 100;
+   console.log("End Value: " + endValue);
+   let speed = 45;
+   
+   let currentValue = startValue;
+   let progress = setInterval(() => {
+      console.log(currentValue);
+      currentValue++;
+      
+      progressValue.textContent = `${currentValue}%`
+      circularProgress.style.background = `conic-gradient(#7d2ae8 ${currentValue * 3.6}deg, #ededed 0deg)`
+      if (currentValue == endValue) {
+         clearInterval(progress);
+      }
+   }, speed);
+}
+
+function loadVariousProgresses(totalPercent, startedPercent, onGoingPercent, completedPercent)
+{
+   showProgress(circularProgress, progressValue, totalPercent);
+   showProgress(circularProgress2, progressValue2, startedPercent);
+   showProgress(circularProgress3, progressValue3, onGoingPercent);
+   showProgress(circularProgress4, progressValue4, completedPercent);
+}

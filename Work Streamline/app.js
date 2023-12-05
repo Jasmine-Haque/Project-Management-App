@@ -27,19 +27,6 @@ app.get("/",intialWindow.router);
 app.post("/login",intialWindow.router);
 app.post("/sign_up",intialWindow.router);
 
-/*
-app.get("/dashboard",async function(request, response){
-    response.statusCode = 200;
-    
-    response.render("dashboard",
-    {
-        action: "dashboard_input",
-        data: request.params.result
-    });
-    
-   //response.render("dashboard");
-});
-*/
 app.get("/error",async function(request, response){
     response.statusCode = 404;
     response.render("error");
