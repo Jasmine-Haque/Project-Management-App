@@ -114,7 +114,7 @@ let progressStartValue4 = 0,
    progressEndValue4 = 15,
    speed4 = 45;
 
-
+/*
 // For started project 
 
 // Get the button element by its id
@@ -195,14 +195,19 @@ project_3.addEventListener('click', function () {
 Assigned to : Sujay 
 Assigned on : 13/6/2023`);
 });
-
+*/
 
 function showProgress(circularProgress, progressValue, percentage)
 {
+   if(percentage == 0)
+   {
+      return;
+   }
    console.log(percentage);
    let startValue = 0;
    let endValue = percentage * 100;
    console.log("End Value: " + endValue);
+   
    let speed = 45;
    
    let currentValue = startValue;
@@ -212,16 +217,19 @@ function showProgress(circularProgress, progressValue, percentage)
       
       progressValue.textContent = `${currentValue}%`
       circularProgress.style.background = `conic-gradient(#7d2ae8 ${currentValue * 3.6}deg, #ededed 0deg)`
-      if (currentValue == endValue) {
+      if (currentValue >= endValue) {
          clearInterval(progress);
       }
    }, speed);
 }
 
-function loadVariousProgresses(totalPercent, startedPercent, onGoingPercent, completedPercent)
+function loadVariousProgresses(totalPercent, completedPercent, onGoingPercent, waitingPercent)
 {
    showProgress(circularProgress, progressValue, totalPercent);
-   showProgress(circularProgress2, progressValue2, startedPercent);
+   showProgress(circularProgress2, progressValue2, completedPercent);
    showProgress(circularProgress3, progressValue3, onGoingPercent);
-   showProgress(circularProgress4, progressValue4, completedPercent);
+   showProgress(circularProgress4, progressValue4, waitingPercent);
 }
+
+
+loadVariousProgresses(1.0, 2.0/9.0 ,0.3,4.0/9.0);

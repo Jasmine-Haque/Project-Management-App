@@ -5,6 +5,7 @@ import { request } from "http";
 import path from "path";
 import async from "async";
 import * as DBManage from "../public/js/db_management.mjs";
+//import * as dashboardModule from "../public/js/dashboard.js"
 export const router = express.Router();
 
 const LOGIN_CREDIENTIALS = 0;
@@ -12,7 +13,7 @@ const STARTED_PROJECTS = 1;
 const ON_GOING_PROJECTS = 2;
 const COMPLETED_PROJECTS = 3;
 
-const loadFromDatabase = false;
+const loadFromDatabase = true;
 
 router.post("/login",async function (request,response){
     let loginUsername = request.body.login_uname;
