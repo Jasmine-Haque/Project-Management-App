@@ -72,7 +72,6 @@
             <div class="top">
 
 <!------Sidebar----->
-
 <!------Content----->
 <section id="content">
    <!------Navbar----->
@@ -98,14 +97,17 @@
                   <div class="profile">
                      <div class="info">
                          
-                        <%if(action != null && action == 'dashboard_input'){ %>
-
-                              <p>Hey, <%=data.Name %><b></b></p>
-                        <%  }
+                        <%if(action != null && action == 'dashboard_input'){ 
+                           
+                           loginCredentials.forEach(function(element){
+                           %>
+                                 <p>Hey, <%= element.Name %><b></b></p> 
+                        <%    }); 
+                           }
                            else
                            {
                         %>
-                              <p>Hey, <b>User</b></p>
+                              <p>Hey, <b><i>User</i></b></p>
                         
                         <% }%>
                         <small class="text-muted">Admin</small>
@@ -165,19 +167,37 @@
                      </div>
 
                      <div class="box">
-                        <button class="project-name">
+                        <%
+                        if(action != null && action == "dashboard_input")
+                        {
+                           startedProjects.forEach(function(element){
+                        %>
+                        <button class="project-name started-project-btn">
+                           <h3><%= element.Title %></h3>
+                           <a href="https://jasmine-haque.github.io/BHARAT-INTERN/"><img src="images/p1.png" alt=""></a>
+                        </button>
+                           
+                        <% 
+                           });
+                        } 
+                        else{
+                        %>
+                        
+                           <button class="project-name started-project-btn">
                            <!-- <h3>Project 1</h3> -->
                            <a href="https://jasmine-haque.github.io/BHARAT-INTERN/"><img src="images/p1.png" alt=""></a>
                         </button>
-                        <button class="project-name">
+                        <button class="project-name started-project-btn">
                            <!-- <h3>Project 2</h3> -->
                            <a href="https://deploy-preview-1--strong-queijadas-7534a5.netlify.app/"><img src="images/p3.png" alt=""></a>
                         </button>
-                        <button class="project-name">
+                        <button class="project-name started-project-btn">
                            <!-- <h3>Project 3</h3> -->
                            <a href="https://moiedkhan877.github.io/task3-codealpha/"><img src="images/p2.png" alt=""></a>
                         </button>
-
+                        <%
+                        }
+                        %>
                      </div>
 
                   </div>
@@ -189,19 +209,39 @@
                      </div>
 
                      <div class="box">
-                        <button class="project-name">
+                        <%
+                        if(action != null && action == "dashboard_input")
+                        {
+                           onGoingProjects.forEach(function(element){
+                        %>
+                        <button class="project-name ongoing-project-btn">
+                           <h3><%= element.Title %></h3>
+                           <a href="https://jasmine-haque.github.io/BHARAT-INTERN/"><img src="images/p1.png" alt=""></a>
+                        </button>
+                           
+                        <% 
+                           });
+                        } 
+                        else{
+                        %>
+                        
+                        <button class="project-name ongoing-project-btn">
                            <!-- <h3>Project 1</h3> -->
                            <a href="https://munendra10.github.io/CodeAlpha-to-do-list/"><img src="images/p4.png" alt=""></a>
                         </button>
-                        <button class="project-name">
+                        <button class="project-name ongoing-project-btn">
                            <!-- <h3>Project 2</h3> -->
                            <a href="https://shantanu-121.github.io/CodeAlpha_Resume_Builder/"><img src="images/p5.png" alt=""></a>
                         </button>
-                        <button class="project-name">
+                        <button class="project-name ongoing-project-btn">
                            <!-- <h3>Project 3</h3> -->
                            <a href="https://nipunika1721.github.io/Codecasa-Task2/"><img src="images/p6.png" alt=""></a>
                         </button>
 
+                        <%
+                        }
+                        %>
+                        
                      </div>
 
                   </div>
@@ -213,19 +253,38 @@
                      </div>
 
                      <div class="box">
-                        <button class="project-name">
+                        <%
+                        if(action != null && action == "dashboard_input")
+                        {
+                           completedProjects.forEach(function(element){
+                        %>
+                        <button class="project-name completed-project-btn">
+                           <h3><%= element.Title %></h3>
+                           <a href="https://jasmine-haque.github.io/BHARAT-INTERN/"><img src="images/p1.png" alt=""></a>
+                        </button>
+                           
+                        <% 
+                           });
+                        } 
+                        else{
+                        %>
+                        
+                        <button class="project-name completed-project-btn">
                            <!-- <h3>Project 1</h3> -->
                            <a href="https://ombhagwat2401.github.io/food-app/"><img src="images/p7.png" alt=""></a>
                         </button>
-                        <button class="project-name">
+                        <button class="project-name completed-project-btn">
                            <!-- <h3>Project 2</h3> -->
                            <a href="https://anshuvairagade.github.io/Travelling-Agency-landing-Page/"><img src="images/p8.png" alt=""></a>
                         </button>
-                        <button class="project-name">
+                        <button class="project-name completed-project-btn">
                            <!-- <h3>Project 3</h3> -->
                            <a href="https://jagathpj.github.io/weather-app/"><img src="images/p9.png" alt=""></a>
                         </button>
 
+                        <%
+                        }
+                        %>
                      </div>
 
                   </div>
@@ -242,7 +301,16 @@
                </div>
 
                <div class="project-progress">
+                  <%
+                     if(action != null && action == "dashboard_input"){
+                  %>
+                     
+                  <%
+                  }
+                  else{
+                  %>
                   <div class="middle">
+                     
                      <div class="left-item">
                         <h2>Total Projects</h2>
                         <h3>2430</h3>
@@ -298,6 +366,9 @@
                      </div>
 
                   </div>
+                  <% 
+                  }
+                  %>
                </div>
 
             </div>
