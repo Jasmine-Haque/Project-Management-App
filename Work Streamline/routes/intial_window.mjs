@@ -13,12 +13,15 @@ const STARTED_PROJECTS = 1;
 const ON_GOING_PROJECTS = 2;
 const COMPLETED_PROJECTS = 3;
 
+const loadFromDatabase = false;
+
 router.post("/login",async function (request,response){
     let loginUsername = request.body.login_uname;
     let loginPassword = request.body.login_psw;
     
-    /*
-    let query1 = "SELECT * from Person where Name='" + loginUsername + "' and password='" + loginPassword + "';";
+    if(loadFromDatabase)
+    {
+        let query1 = "SELECT * from Person where Name='" + loginUsername + "' and password='" + loginPassword + "';";
     let query2 = "SELECT * from Project where STATUS = 'STARTED';";
     let query3 = "SELECT * from Project where STATUS = 'ON_GOING';";
     let query4 = "SELECT * from Project where STATUS = 'COMPLETED';";
@@ -110,16 +113,16 @@ router.post("/login",async function (request,response){
                     completedProjects: results.get(COMPLETED_PROJECTS)
                 });
             }
-        });
-    */
-
-    
-    response.statusCode = 200;
-    response.render("dashboard",
+        });    
+    }
+    else
     {
-        action: null
-    });
-     
+        response.statusCode = 200;
+        response.render("dashboard",
+        {
+            action: null
+        });
+    }
 });
 
 router.post("/sign_up",async function (request,response){
@@ -127,15 +130,19 @@ router.post("/sign_up",async function (request,response){
     let signupEmail = request.body.sign_up_email;
     let signUpPassword = request.body.sign_up_psw;
 
-    
-    let query = "Insert into Person values('" + signupUsername + "','" + signupEmail + "','" + signUpPassword + "','Empy');";
-    DBManage.writeData(query, response,()=>{
-        //window.alert("User successfully added");
-        console.log("User successfully added");
+    if(loadFromDatabase)
+    {
+        let query = "Insert into Person values('" + signupUsername + "','" + signupEmail + "','" + signUpPassword + "','Empy');";
+        DBManage.writeData(query, response,()=>{
+            //window.alert("User successfully added");
+            console.log("User successfully added");
+            response.redirect("/");
+        });
+    }
+    else
+    {
         response.redirect("/");
-    });
-    
-   //response.redirect("/"); 
+    }
 });
 
 
