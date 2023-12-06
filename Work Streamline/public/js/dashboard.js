@@ -1,9 +1,15 @@
+
 const sideMenu = document.querySelector("aside");
 const menuBtn = document.querySelector("#menu-btn");
 const closeBtn = document.querySelector("#close-btn");
 const themeToggler = document.querySelector(".theme-toggler");
 const themeToggler2 = document.querySelector(".theme-toggler-1");
-
+const totalProjectsCntContainer = document.getElementById("total-projects-count");
+const completedProjectsCntContainer = document.getElementById("completed-projects-count");
+const onGoingProjectsCntContainer = document.getElementById("on-going-projects-count");
+const startedProjectsCntContainer = document.getElementById("started-projects-count");
+const projectButtons = document.getElementsByClassName("project-name");
+const projectImagesContainer = document.getElementsByClassName("project-img");
 // show sidebar
 menuBtn.addEventListener('click', () => {
    sideMenu.style.display = 'block';
@@ -66,6 +72,50 @@ const allMonths = [
    'December',
 ];
 
+const projectDescriptions = [];
+
+projectDescriptions.push(`Description : UI Design
+Assigned to : Ravi Mathur
+Assigned on : 2/11/2023`);
+
+projectDescriptions.push(`Description : Content Writing
+Assigned to : Viraj Shukla
+Assigned on : 1/11/2023`);
+
+projectDescriptions.push(`Description : Langing Page
+Assigned to : Abhinav Jaiswal
+Assigned on : 4/11/2023`);
+
+projectDescriptions.push(`Description : Illustration
+Assigned to : Jahnvi Mehta
+Assigned on : 2/9/2023`);
+
+projectDescriptions.push(`Description : UI Design
+Assigned to : Ranvijay Jaiswal
+Assigned on : 23/4/2023`);
+
+projectDescriptions.push(`Description : UI Design
+Assigned to : Ranvijay Jaiswal
+Assigned on : 23/4/2023`);
+
+projectDescriptions.push(`Description : Copywriting
+Assigned to : Rohit Singh
+Assigned on : 12/8/2023`);
+
+projectDescriptions.push(`Description : Designing
+Assigned to : Pratik Ahuja
+Assigned on : 24/2/2023`);
+
+projectDescriptions.push(`Description : Responsive
+Assigned to : Dilip Verma
+Assigned on : 20/4/2023`);
+
+projectDescriptions.push(`Description : Chat Bot
+Assigned to : Sujay 
+Assigned on : 13/6/2023`);
+
+
+
 date.innerHTML = (today.getDate() < 10 ? '0' : '') + today.getDate();
 day.innerHTML = weekDays[today.getDay()];
 month.innerHTML = allMonths[today.getMonth()];
@@ -114,88 +164,6 @@ let progressStartValue4 = 0,
    progressEndValue4 = 15,
    speed4 = 45;
 
-/*
-// For started project 
-
-// Get the button element by its id
-var project_1 = document.getElementById('projectS_1');
-
-// Add a click event listener to the button
-project_1.addEventListener('click', function () {
-   // Display an alert when the button is clicked
-   alert(`Description : UI Design
-Assigned to : Ravi Mathur
-Assigned on : 2/11/2023`);
-});
-
-var project_2 = document.getElementById('projectS_2');
-project_2.addEventListener('click', function () {
-   alert(`Description : Content Writing
-Assigned to : Viraj Shukla
-Assigned on : 1/11/2023`);
-});
-
-var project_3 = document.getElementById('projectS_3');
-project_3.addEventListener('click', function () {
-   alert(`Description : Langing Page
-Assigned to : Abhinav Jaiswal
-Assigned on : 4/11/2023`);
-});
-
-// For Ongoing project 
-
-// Get the button element by its id
-var project_1 = document.getElementById('projectO_1');
-
-// Add a click event listener to the button
-project_1.addEventListener('click', function () {
-   // Display an alert when the button is clicked
-   alert(`Description : Illustration
-Assigned to : Jahnvi Mehta
-Assigned on : 2/9/2023`);
-});
-
-var project_2 = document.getElementById('projectO_2');
-project_2.addEventListener('click', function () {
-   alert(`Description : UI Design
-Assigned to : Ranvijay Jaiswal
-Assigned on : 23/4/2023`);
-});
-
-var project_3 = document.getElementById('projectO_3');
-project_3.addEventListener('click', function () {
-   alert(`Description : Copywriting
-Assigned to : Rohit Singh
-Assigned on : 12/8/2023`);
-});
-
-// For Completed project 
-
-// Get the button element by its id
-var project_1 = document.getElementById('projectC_1');
-
-// Add a click event listener to the button
-project_1.addEventListener('click', function () {
-   // Display an alert when the button is clicked
-   alert(`Description : Designing
-Assigned to : Pratik Ahuja
-Assigned on : 24/2/2023`);
-});
-
-var project_2 = document.getElementById('projectC_2');
-project_2.addEventListener('click', function () {
-   alert(`Description : Responsive
-Assigned to : Dilip Verma
-Assigned on : 20/4/2023`);
-});
-
-var project_3 = document.getElementById('projectC_3');
-project_3.addEventListener('click', function () {
-   alert(`Description : Chat Bot
-Assigned to : Sujay 
-Assigned on : 13/6/2023`);
-});
-*/
 
 function showProgress(circularProgress, progressValue, percentage)
 {
@@ -212,7 +180,7 @@ function showProgress(circularProgress, progressValue, percentage)
    
    let currentValue = startValue;
    let progress = setInterval(() => {
-      console.log(currentValue);
+      //console.log(currentValue);
       currentValue++;
       
       progressValue.textContent = `${currentValue}%`
@@ -232,4 +200,39 @@ function loadVariousProgresses(totalPercent, completedPercent, onGoingPercent, w
 }
 
 
-loadVariousProgresses(1.0, 2.0/9.0 ,0.3,4.0/9.0);
+window.onload = function(){
+   let totalProjectsCount = parseFloat(totalProjectsCntContainer.innerHTML);
+   let completedProjectsCount = parseFloat(completedProjectsCntContainer.innerHTML);
+   let onGoingProjectsCount = parseFloat(onGoingProjectsCntContainer.innerHTML);
+   let startedProjectsCount = parseFloat(startedProjectsCntContainer.innerHTML);
+
+   let totalPercent = 1.0;
+   let completedPercent = completedProjectsCount/totalProjectsCount;
+   let onGoingPercent = onGoingProjectsCount/totalProjectsCount;
+   let startedPercent = startedProjectsCount/totalProjectsCount;
+
+   console.log("Loading various progresses");
+   loadVariousProgresses(totalPercent, completedPercent ,onGoingPercent,startedPercent);
+
+   let current = 0;
+   let imageNumber = 1;
+   for(let i = 0; i < projectButtons.length; i++)
+   {
+      projectImagesContainer[i].setAttribute("src","/images/p" + imageNumber.toString() + ".png");
+      if(imageNumber + 1 <= 9)
+      {
+         imageNumber++;
+      }
+      else
+      {
+         imageNumber = 1;
+      }
+      projectButtons[i].addEventListener("click",function(){
+         
+         alert(projectDescriptions[current]);
+         current = (current + 1) % projectDescriptions.length;
+      });
+
+      
+   }
+};

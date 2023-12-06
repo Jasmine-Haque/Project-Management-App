@@ -109,7 +109,8 @@ router.post("/login",async function (request,response){
                     loginCredentials: results.get(LOGIN_CREDIENTIALS),
                     startedProjects: results.get(STARTED_PROJECTS),
                     onGoingProjects: results.get(ON_GOING_PROJECTS),
-                    completedProjects: results.get(COMPLETED_PROJECTS)
+                    completedProjects: results.get(COMPLETED_PROJECTS),
+                    //dashboardModule: dashboardModule
                 });
 
                 
