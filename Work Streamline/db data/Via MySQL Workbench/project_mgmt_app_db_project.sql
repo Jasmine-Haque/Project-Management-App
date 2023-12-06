@@ -16,29 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `person`
+-- Table structure for table `project`
 --
 
-DROP TABLE IF EXISTS `person`;
+DROP TABLE IF EXISTS `project`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `person` (
-  `Email` varchar(50) NOT NULL,
-  `Password` varchar(20) NOT NULL,
-  `Name` varchar(20) NOT NULL DEFAULT 'NO_NAME',
-  `Person Type` varchar(5) NOT NULL,
-  PRIMARY KEY (`Email`)
+CREATE TABLE `project` (
+  `Title` varchar(50) NOT NULL,
+  `StartDate` date NOT NULL,
+  `EndDate` date NOT NULL,
+  `TeamLead` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `Status` varchar(20) NOT NULL,
+  PRIMARY KEY (`Title`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `person`
+-- Dumping data for table `project`
 --
 
-LOCK TABLES `person` WRITE;
-/*!40000 ALTER TABLE `person` DISABLE KEYS */;
-INSERT INTO `person` VALUES ('admin@gmail.com','1234','Test','Admin');
-/*!40000 ALTER TABLE `person` ENABLE KEYS */;
+LOCK TABLES `project` WRITE;
+/*!40000 ALTER TABLE `project` DISABLE KEYS */;
+INSERT INTO `project` VALUES ('D MON','2023-12-05','2023-12-05','Test Team Lead','COMPLETED'),('DLL_CS','2023-12-05','2023-12-05','Test Team Lead','STARTED'),('File Browser','2023-12-05','2023-12-05','Test Team Lead','STARTED'),('Hexa','2023-12-05','2023-12-05','Test Team Lead','STARTED'),('Horde','2023-12-05','2023-12-05','Test Team Lead','ON_GOING'),('Net Lib','2023-12-05','2023-12-05','Test Team Lead','ON_GOING'),('Port File Dial','2023-12-05','2023-12-05','Test Team Lead','ON_GOING'),('Skylicht','2023-12-05','2023-12-05','Test Team Lead','STARTED'),('WS Client','2023-12-05','2023-12-05','Test Team Lead','COMPLETED');
+/*!40000 ALTER TABLE `project` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-29 13:40:07
+-- Dump completed on 2023-12-06 18:26:29
